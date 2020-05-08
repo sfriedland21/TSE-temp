@@ -1,0 +1,162 @@
+bash testing.sh
+Beginning test...
+incorrect number of parameters
+Passed test w/ 1 argument
+incorrect number of parameters
+Passed test w/ 2 arguments
+incorrect number of parameters
+Passed test w/ 3 arguments
+URL is not internal
+Passed test w/ external URL
+testing.sh: line 62: 4: command not found
+URL is not internal
+Passed test w/ non-existent server
+URL is not internal
+Passed test w/ valid server, non-existent page
+maxDepth must be a positive integer
+Passed test w/ negative page depth
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Passed test at depth = 0
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Passed test at depth = 1
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found external URL: https://en.wikipedia.org/wiki/Algorithm
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Passed test at depth = 2
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found external URL: https://en.wikipedia.org/wiki/Algorithm
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found external URL: https://en.wikipedia.org/wiki/Breadth-first_search
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Passed test at depth = 3
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found external URL: https://en.wikipedia.org/wiki/Algorithm
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found external URL: https://en.wikipedia.org/wiki/Breadth-first_search
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found external URL: https://en.wikipedia.org/wiki/ENIAC
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found external URL: https://en.wikipedia.org/wiki/Depth-first_search
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found external URL: https://en.wikipedia.org/wiki/Computational_biology
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Passed test at depth = 4
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found external URL: https://en.wikipedia.org/wiki/Algorithm
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found external URL: https://en.wikipedia.org/wiki/Breadth-first_search
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found external URL: https://en.wikipedia.org/wiki/ENIAC
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Found external URL: https://en.wikipedia.org/wiki/Graph_traversal
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Found external URL: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found external URL: https://en.wikipedia.org/wiki/Depth-first_search
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found external URL: https://en.wikipedia.org/wiki/Computational_biology
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Passed test at depth = 5
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found external URL: https://en.wikipedia.org/wiki/Depth-first_search
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found external URL: https://en.wikipedia.org/wiki/Algorithm
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/B.html
+Found external URL: https://en.wikipedia.org/wiki/Breadth-first_search
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/E.html
+Found external URL: https://en.wikipedia.org/wiki/ENIAC
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/A.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/G.html
+Found external URL: https://en.wikipedia.org/wiki/Graph_traversal
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/F.html
+Found external URL: https://en.wikipedia.org/wiki/Fast_Fourier_transform
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/H.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/C.html
+Found external URL: https://en.wikipedia.org/wiki/Computational_biology
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/D.html
+Found seen URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/letters/index.html
+Passed test w/ closed set of cross-linked pages, different seed page
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+Passed wiki test at depth = 0
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+Found new URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Linked_list.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Hash_table.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Dartmouth_College.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Unix.html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/C_(programming_language).html
+Exploring URL: http://old-www.cs.dartmouth.edu/~cs50/data/tse/wikipedia/Computer_science.html
+Passed wiki test at depth = 1
+Done.
