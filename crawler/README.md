@@ -5,7 +5,7 @@ Sourced info from CS50 TSE Crawler [Requirements Spec](https://www.cs.dartmouth.
 ### crawler
 
 The TSE crawler is a standalone program that crawls the web and retrieves webpages starting from a "seed" URL.
-It parses the seed webpage, extracts any embedded URLs, then retrieves each of those pages, recursively, but limits its exploration to a given "depth". The crawler does not explore pages in any particular order. This crawler limits its crawl to a specific web server inside Dartmouth CS. 
+It parses the seed webpage, extracts any embedded URLs, then retrieves each of those pages, recursively, but limits its exploration to a given "depth". The crawler does not explore pages in any particular order. This crawler limits its crawl to a specific web server inside Dartmouth CS.
 
 Each explored webpage is saved to a file, one file per page, using a unique document ID as the file name (document IDs 1, 2, 3, 4, and so forth). Within a file, we write:
  * the page URL on the first line,
