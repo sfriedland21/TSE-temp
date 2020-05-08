@@ -57,6 +57,6 @@ To test, simply `make test` or `make test &> testing.out`.
 
 To clean up directory, simply `make clean`.
 
-Details of test run in TESTING.
+Details of test run in [TESTING](../blob/master/crawler/TESTING.md).
 
-Details of implementation choices in IMPLEMENTATION.
+Details of implementation choices in [IMPLEMENTATION](../blob/master/crawler/IMPLEMENTATION.md).
