@@ -24,7 +24,7 @@ MAKE = make
 $(PROG): $(OBJS) $(LLIBS)
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $@ 
 
-.PHONY: clean test
+.PHONY: test clean
 
 clean:
 	rm -f *~ *.o *.dSYM

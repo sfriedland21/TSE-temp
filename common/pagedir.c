@@ -65,19 +65,36 @@ void pagescanner(webpage_t *page, hashtable_t *ht, bag_t *bag)
                     if (new != NULL) {
                         // add the new webpage to the bag of webpages to be crawled
                         bag_insert(bag, new);
-                        printf ("Found new URL: %s\n", result); // progress indicator
+                        printf("Found new URL: %s\n", result); // progress indicator
                     }
                 }
                 else {
-                    printf ("Found seen URL: %s\n", result); // progress indicator
+                    printf("Found seen URL: %s\n", result); // progress indicator
                     free(result);
                 }
             }
             else {
-                printf ("Found external URL: %s\n", result); // progress indicator
+                printf("Found external URL: %s\n", result); // progress indicator
                 free(result);
             }
         }
         else free(result);
+    }
+}
+
+/************** isCrawlerDirectory **************/
+bool isCrawlerDirectory(char *dir) {
+    int length = strlen(dir);
+    char path[length+10]; // create string with space for dir and /.crawler
+    sprintf(path, "%s/%s", dir, "/.crawler"); // create path name
+    FILE *fp = fopen(path, "r"); // attempt to open file for reading
+
+    if (fp != NULL) {
+        fclose(fp); // close only if opened successfully
+        return true;
+    }
+    else {
+        fprintf(stderr, "could not verify if dir is a Crawler-produced directory\n");
+        return false;
     }
 }

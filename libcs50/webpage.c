@@ -125,7 +125,6 @@ webpage_delete(void *data)
   }
 }
 
-
 /* ************* webpage_fetch ******************** */
 /* see webpage.h for usage documentation.
  *

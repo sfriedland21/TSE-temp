@@ -10,7 +10,7 @@
 L = ../libcs50
 
 PROG = 
-OBJS = pagedir.o
+OBJS = pagedir.o word.o index.o
 LIB = common.a
 LLIBS = $L/libcs50-given.a
 
@@ -24,6 +24,8 @@ $(LIB): $(OBJS)
 
 # Dependencies: object files depend on header files
 pagedir.o: pagedir.h $L/webpage.h
+word.o: word.h
+index.o: index.h $L/file.h $L/webpage.h
 
 .PHONY: clean
 
