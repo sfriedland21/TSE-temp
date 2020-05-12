@@ -10,7 +10,7 @@
 L = ../libcs50
 
 PROG = crawler
-OBJS = crawler.o
+OBJS = crawler.o ../common/pagedir.o
 LIBS =
 LLIBS = $L/libcs50-given.a ../common/common.a
 

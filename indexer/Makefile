@@ -1,4 +1,4 @@
-# Makefile for 'indexer'
+# Makefile for 'crawler'
 #
 # Sydney Friedland, May 2020
 # 
@@ -9,8 +9,8 @@
 
 L = ../libcs50
 
-PROG =
-OBJS =
+PROG = 
+OBJS = ../common/pagedir.o ../common/index.o ../common/word.o
 LIBS =
 LLIBS = $L/libcs50-given.a ../common/common.a
 
@@ -23,19 +23,18 @@ MAKE = make
 
 all: indexer indextest
 
-indexer: indexer.o $(LLIBS)
+indexer: indexer.o $(OBJS) $(LLIBS)
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $@
 
-indextest: indextest.o $(LLIBS)
+indextest: indextest.o $(OBJS) $(LLIBS)
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $@
 
 .PHONY: test clean
 
 clean:
 	rm -f *~ *.o *.dSYM
-	rm -f indexer indextest
+	rm -f $(PROG)
 	rm -f stocks
 	rm -f core
 test:
 	bash testing.sh
-

@@ -9,9 +9,12 @@
 #ifndef __INDEX_H
 #define __INDEX_H
 
-// include macros here
+#include <stdio.h>
+#include "hashtable.h"
 
 // index_build
+hashtable_t* index_build(hashtable_t* ht, char* dir);
+
 
 // index_save
 
