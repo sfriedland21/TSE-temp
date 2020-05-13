@@ -12,7 +12,7 @@ L = ../libcs50
 PROG = 
 OBJS = pagedir.o word.o index.o
 LIB = common.a
-LLIBS = $L/libcs50-given.a
+LLIBS = $L/libcs50.a
 
 CFLAGS = -Wall -pedantic -std=c11 -ggdb -I$L
 CC = gcc

@@ -10,12 +10,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include "word.h"
+#include <ctype.h>
 
 /**************** functions ****************/
 
 /**************** normalize_word ****************/
 char* normalize_word(char* word)
 {
-    // do something 
+    for(int i = 0; i < (strlen(word) + 1); i++) {
+        word[i] = tolower(word[i]);
+    }
+
     return word;
 }

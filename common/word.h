@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 
-/* Converts all letters in a word to lowercase */
-char* normalize_word();
+/**************** normalize_word ****************/
+/* Converts all letters in a string to lowercase */
+char* normalize_word(char* word);
 
 #endif // __WORD_H

@@ -12,7 +12,7 @@ L = ../libcs50
 PROG = crawler
 OBJS = crawler.o ../common/pagedir.o
 LIBS =
-LLIBS = $L/libcs50-given.a ../common/common.a
+LLIBS = $L/libcs50.a ../common/common.a
 
 # uncomment the following to turn on verbose memory logging
 # TESTING=-DMEMTEST

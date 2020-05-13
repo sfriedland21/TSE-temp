@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
     if (!isCrawlerDirectory(argv[1])) return 1; // check if error printed from pagedir
 
     // check if indexFilename is the pathname of a writeable file
-    FILE *fp = fopen(argv[2], "w"); // attempt to open file for reading
+    FILE *fp = fopen(argv[2], "w"); // attempt to open file for writing
     if (fp == NULL) {
         fprintf (stderr, "indexFilename could not be opened for writing\n");
         return 1;
@@ -44,23 +44,23 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    // for each file in the directory, send to index build? or do so in index build?
-    index = index_build(index, argv[1]);
+    index = index_build(index, argv[1]); // build the index
 
-    hashtable_delete(index, item_delete);
+    index_save(index, argv[2]); // save the index
+
+    hashtable_delete(index, item_delete); // clean up
 
     return 0;
 }
 
-
-// initialize data structure here? prolly no need
-
 /**************** item_delete ****************/
-/* Frees item memory in hashtable */
+/* Frees item memory in hashtable, in this case,
+ * a counterset.
+ */
 void item_delete(void *item)
 {
-    /*if (item != NULL) {
-        free(item);
+    if (item != NULL) {
+        counters_delete(item); // delete the counterset
         item = NULL;
-    }*/
+    }
 }

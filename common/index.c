@@ -12,109 +12,132 @@
 #include "file.h"
 #include "webpage.h"
 #include "index.h"
+#include "word.h"
 #include "hashtable.h"
 #include "counters.h"
 
+static void get_keypairs(void *arg, const char *key, void *item);
+static void print_keypairs(void *arg, const int key, const int count);
+
 /**************** functions ****************/
 
-/*  build an inverted-index data structure mapping from words to (documentID, count) 
-    pairs, wherein each count represents the number of occurrences of the given word in 
-    the given document. Ignore words with fewer than three characters, and “normalize”
-    the word before indexing. Here, “normalize” means to convert all letters to lower-case */
-
 /**************** index_build ****************/
-hashtable_t* index_build(hashtable_t* ht, char* dir) {
+hashtable_t* index_build(hashtable_t *ht, char *dir) {
 
     int dirlen = strlen(dir);
     int docID = 1; // first file    
     char ifile[dirlen + 30]; // assume docID will be no more than 29 digits...
     sprintf(ifile, "%s/%d", dir, docID); // create path
-    FILE* fp = fopen(ifile, "r");
+    FILE *fp = fopen(ifile, "r");
 
-    int URLcount, HTMLcount, c, linenum;
-    URLcount = 0;
-    HTMLcount = 0;
-    linenum = 0;
     while (fp != NULL) { // while there are still files to read in the directory
-        
-        /* while ((c = fgetc(fp)) != EOF) { // allocate the necessary amount of memory
-            if (c == '\n') linenum++;
-            else if (linenum == 0) URLcount++;
-            else if (linenum >= 2) HTMLcount++;
-        }
-        fseek(fp, 0, SEEK_SET); // rewind to beginning of file */
-
         char *url = freadlinep(fp);
-        printf("URL: %s\n", url);
         int depth;
         fscanf(fp, "%d\n", &depth);
-        printf("depth: %d\n", depth);
         char *html = freadfilep(fp);
-        printf("html: %s\n", html);
 
         webpage_t *page = webpage_new(url, depth, html);
         int pos = 0;
-        char *result;
+        char *result; // words found in document
 
-        while ((result = webpage_getNextWord(page, &pos)) != NULL) {
+        while ((result = webpage_getNextWord(page, &pos)) != NULL) { // actually build the index
             if (strlen(result) >= 3) {
                 printf("Found word: %s\n", result);
-                //result = normalizeWord(result);
+                result = normalize_word(result);
+                printf("Normalized: %s\n", result);
+
+                counters_t *ctrs;
+                // if word not already in index, create new counterset
+                if ((ctrs = hashtable_find(ht, result)) == NULL) {
+                    ctrs = counters_new(); // create counter set
+                    if (ctrs != NULL) {
+                        counters_add(ctrs, docID);
+                        hashtable_insert(ht, result, ctrs);
+                    }
+                    else fprintf(stderr, "counters_new failed\n"); 
+                }
+                // if word already in index, update count for corresponding docID
+                else counters_add(ctrs, docID); // increment existing counterset found in ht
             }
             free(result);
-            
-            // Initialize a new counter and call counters_add with docID as key
-            // insert into hashtable with the word as the key and the counter as the item
-            // Free memory
-            // If found, the counter will be returned and you can call counters_add 
-            // (whether or not this doc id has already been called) and the count will either
-            // be saved as one or increment. 
-
-            // Free webpage memory with delete_webpage
         }
 
-        webpage_delete(page);
+        webpage_delete(page); // clean up
         fclose(fp);
+
         docID++;
         sprintf(ifile, "%s/%d", dir, docID); // create new path
         fp = fopen(ifile, "r"); // open next document in the directory
     }
     
-    // if fp was NULL do nothing or print an error message
-    return(ht);
-    
+    return(ht);    
 }
 
-    /* build an inverted-index data structure mapping from words to (documentID, count) 
-    pairs, wherein each count represents the number of occurrences of the given word in 
-    the given document. Ignore words with fewer than three characters, and “normalize”
-    the word before indexing. Here, “normalize” means to convert all letters to lower-case */
-
-
-
-
-
-
-
-
-/* create a file indexFilename and write the index to that file
- * 
- * The indexer writes the inverted index to a file, and both the index tester and 
- * the querier read the inverted index from a file; the file shall be in the following format.
-
-one line per word, one word per line
-each line provides the word and one or more (docID, count) pairs, in the format
-word docID count [docID count]…
-where word is a string of lower-case letters,
-where docID is a positive non-zero integer,
-where count is a positive non-zero integer,
-where the word and integers are separated by spaces.
-
-Within the file, the lines may be in any order.
-Within a line, the docIDs may be in any order. */
 /**************** index_save ****************/
-// void probably
+void index_save(hashtable_t *ht, char *filename)
+{
+    FILE *fp = fopen(filename, "w"); // open indexfile, provided by user
+    if (fp != NULL) {
+        hashtable_iterate(ht, (void*)fp, get_keypairs); // go through the hashtable
+    }
+    else fprintf(stderr, "error opening indexfile\n");
 
+    fclose(fp);
+}
+
+/**************** get_keypairs ****************/
+/* Prints a key (a word) from the index hashtable to 
+ * indexfile (which may or may not exist – if the file
+ * already exists, its contents will be overwritten),
+ * and iterates over the counterset which corresponds 
+ * to that key.
+ * The 'static' modifier means this function is not visible
+ * outside this file 
+ */
+static void get_keypairs(void *arg, const char *key, void *item) 
+{   
+    fprintf((FILE*)arg, "\n%s ", key); // print word to file
+    counters_iterate(item, arg, print_keypairs); // iterate over counterset
+}
+
+/**************** print_keypairs ****************/
+/* Prints [docID count] pairs from a counterset
+ * to indexfile (which may or may not exist – if the file
+ * already exists, its contents will be overwritten),
+ * and iterates over the counterset which corresponds 
+ * to that key.
+ * The 'static' modifier means this function is not visible
+ * outside this file 
+ */
+static void print_keypairs(void *arg, const int key, const int count)
+{
+    fprintf((FILE*)arg, "[%d %d] ", key, count); // print [docID count] pairs to file
+}
 
 /**************** index_load ****************/
-// hashtable?
+hashtable_t* index_load(hashtable_t *ht, FILE *fp)
+{
+    int numlines = lines_in_file(fp);
+    int i, docID, count;
+    char jnk;
+
+    jnk = fgetc(fp);
+    for (i = 0; i < numlines; i++) {
+        counters_t *ctrs = counters_new(); // create new counterset for each word
+        if (ctrs != NULL) {
+            char *word = freadwordp(fp); // get word
+            jnk = fgetc(fp);
+            while ((jnk != '\n') && (jnk != EOF)) { // get docID count pairs until end of line
+                if (jnk == '[') {
+                    fscanf(fp, "%d %d]", &docID, &count);
+                    counters_set(ctrs, docID, count); // set counter docID count pair
+                }
+                jnk = fgetc(fp);
+            }
+            hashtable_insert(ht, word, ctrs); // put word and all associated docID count pairs into ht
+            free(word);
+        }        
+        else fprintf(stderr, "counters_new failed\n"); 
+    }
+    return ht;
+}
