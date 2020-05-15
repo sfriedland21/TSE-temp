@@ -42,12 +42,15 @@ int main(int argc, char* argv[]) {
             return 1;
         }
 
+        printf("Loading index...\n");
         index = index_load(index, ofp); // load the index structure
         fclose(ofp);
 
+        printf("Saving index...\n");
         index_save(index, argv[2]); // save the index structure
         
         hashtable_delete(index, item_delete); // clean up
+        printf("Done.\n");
     }
 
     return 0;

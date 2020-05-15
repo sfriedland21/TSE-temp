@@ -1,0 +1,34 @@
+bash testing.sh
+Beginning test...
+incorrect number of parameters
+Indexer passed test w/ 1 argument
+incorrect number of parameters
+Indexer passed test w/ 2 arguments
+incorrect number of parameters
+Indexer passed test w/ 4 arguments
+could not verify if dir is a Crawler-produced directory
+Indexer passed test w/ invalid pageDirectory
+indexFilename could not be opened for writing
+Indexer passed test w/ invalid indexFilename
+incorrect number of parameters
+Indextest passed test w/ 1 argument
+incorrect number of parameters
+Indextest passed test w/ 2 arguments
+incorrect number of parameters
+Indextest passed test w/ 4 arguments
+oldIndexFilename could not be opened for reading
+Indextest passed test w/ invalid oldIndexFilename
+error opening newIndexFilename
+Loading index...
+Saving index...
+Done.
+Building index...
+Saving index...
+Done.
+Successfully created index
+Loading index...
+Saving index...
+Done.
+Successfully created testindex
+no differences
+Done.

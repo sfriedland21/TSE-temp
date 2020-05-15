@@ -33,7 +33,7 @@ indextest: indextest.o $(OBJS) $(LLIBS)
 
 clean:
 	rm -f *~ *.o *.dSYM
-	rm -f $(PROG)
+	rm -f indexer indextest
 	rm -f stocks
 	rm -f core
 test:

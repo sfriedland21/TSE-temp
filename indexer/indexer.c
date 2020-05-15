@@ -44,11 +44,14 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
+    printf("Building index...\n");
     index = index_build(index, argv[1]); // build the index
 
+    printf("Saving index...\n");
     index_save(index, argv[2]); // save the index
 
     hashtable_delete(index, item_delete); // clean up
+    printf("Done.\n");
 
     return 0;
 }

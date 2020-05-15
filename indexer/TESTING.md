@@ -2,4 +2,14 @@
 ## CS50 Spring 2020, Lab 5 Testing
 
 ### Testing
-Note that TESTING.md is different from the ‘Testing plan’, which is a short high-level description written before you code. TESTING.md contains (or refers to) results from the tests. It may refer to other files that contain input to or output from your test runs, or scripts to run the tests; they need not be copied into this file. (Indeed, your file will be much more readable if you don’t fill it with long scripts or output!)
+Indexer can be tested by running `testing.sh` (integration testing) from the command line once `indexer` has been assembled or `make test`, all within the indexer directory. If the test script is run using these options, the test results will be printed to stdout. `testing.sh` tests the indexer's response to invalid parameters and an incorrect number of parameters, and compares the index created and saved by `indexer` to the index loaded and saved by `indextest` (these two indexes should consist of the same information, although that information may not be in the same order).
+
+`indexer` prints the following "progress" indicators as it runs:
+  1. Building index...
+  2. Saving index...
+  3. Done.
+
+`index test` prints the following "progress" indicators as it runs:
+  1. Loading index...
+  2. Saving index...
+  3. Done.
