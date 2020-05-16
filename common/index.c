@@ -34,36 +34,39 @@ hashtable_t* index_build(hashtable_t *ht, char *dir) {
 
     while (fp != NULL) { // while there are still files to read in the directory
         char *url = freadlinep(fp);
-        int depth;
-        fscanf(fp, "%d\n", &depth);
-        char *html = freadfilep(fp);
+        if (url != NULL) {
+            int depth;
+            fscanf(fp, "%d\n", &depth);
+            char *html = freadfilep(fp);
+            if (html != NULL) {
+                webpage_t *page = webpage_new(url, depth, html);
+                if (page != NULL) {
+                    int pos = 0;
+                    char *result; // words found in document
 
-        webpage_t *page = webpage_new(url, depth, html);
-        if (page != NULL) {
-            int pos = 0;
-            char *result; // words found in document
+                    while ((result = webpage_getNextWord(page, &pos)) != NULL) { // actually build the index
+                        if (strlen(result) >= 3) {
+                            result = normalize_word(result);
 
-            while ((result = webpage_getNextWord(page, &pos)) != NULL) { // actually build the index
-                if (strlen(result) >= 3) {
-                    result = normalize_word(result);
-
-                    counters_t *ctrs;
-                    // if word not already in index, create new counterset
-                    if ((ctrs = hashtable_find(ht, result)) == NULL) {
-                        ctrs = counters_new(); // create counter set
-                        if (ctrs != NULL) {
-                            counters_add(ctrs, docID);
-                            hashtable_insert(ht, result, ctrs);
+                            counters_t *ctrs;
+                            // if word not already in index, create new counterset
+                            if ((ctrs = hashtable_find(ht, result)) == NULL) {
+                                ctrs = counters_new(); // create counter set
+                                if (ctrs != NULL) {
+                                    counters_add(ctrs, docID);
+                                    hashtable_insert(ht, result, ctrs);
+                                }
+                                else fprintf(stderr, "counters_new failed\n"); 
+                            }
+                            // if word already in index, update count for corresponding docID
+                            else counters_add(ctrs, docID); // increment existing counterset found in ht
                         }
-                        else fprintf(stderr, "counters_new failed\n"); 
+                        free(result);
                     }
-                    // if word already in index, update count for corresponding docID
-                    else counters_add(ctrs, docID); // increment existing counterset found in ht
-                }
-                free(result);
-            }
 
-            webpage_delete(page); // clean up
+                    webpage_delete(page); // clean up
+                }
+            }
         }
         fclose(fp);
         
