@@ -1,4 +1,4 @@
-# Makefile for 'crawler'
+# Makefile for 'indexer'
 #
 # Sydney Friedland, May 2020
 # 
