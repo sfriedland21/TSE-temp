@@ -4,11 +4,11 @@ Sourced info from CS50 TSE Querier [Requirements Spec](https://www.cs.dartmouth.
 
 ### querier
 
-## Functionality
+#### Functionality
 
 This *querier* prints the set of documents that contain all the words in the query in decreasing order by score, where the score is the number of occurrences of a word in a document. Operators (‘and’, ‘or’) are treated as regular words, but *querier* will print an error if 'and, 'or' appear at the beginning or end of a query, or are adjacent. 
 
-## Overview
+#### Overview
 
 The TSE *querier* is a standalone program that reads the index file produced by the TSE Indexer, and page files produced by the TSE Crawler, and answers search queries submitted via stdin. Does not protect against duplicate queries.
 
