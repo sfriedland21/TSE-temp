@@ -20,7 +20,7 @@
 `querier` uses following helpfer functions from the `common` library:
   1. *indexbuild*, which builds the index from `crawler` produced documents.
   2. *normalize_word*, which converts a query to lowercase
-  3. *isCrawlerDirectory*, which determines if pageDirectory was produced by `crawler`.
+  3. *isCrawlerDirectory*, which determines if `pageDirectory` was produced by `crawler`.
 
 ### Major data structures
 
@@ -36,16 +36,16 @@
 3. Build the index
 4. Request a query then repeat the following until EOF
 5. For each query
-    6. Normalize the query (convert to lowercase) and extract individual words
-    7. Check for syntax errors, if no errors
-    8. For each word in the query
-        9. If the word exists in the index, create a new counterset to hold the docIDs corresponding to the documents in which the word appears 
-        10. If the first time coming across a docID, set the score in a separate counterset to that docID's count
-        12. If not first time coming across a docID, increment the docID's score to be the sum of it's current score and the count corresponding to the docID's count for the word under investigation
-        13. Once all words in the query have been investigated, determine the size of the counterset containing docID score pairs 
-        14. Insert into an array of result_t structs 
-        15. Sort the array into descending order by score
-        16. Print according to format in the specs
+&nbsp;6. Normalize the query (convert to lowercase) and extract individual words
+&nbsp;7. Check for syntax errors, if no errors
+&nbsp;8. For each word in the query
+&nbsp;&nbsp;9. If the word exists in the index, create a new counterset to hold the docIDs corresponding to the documents in which the word appears 
+&nbsp;&nbsp;10. If the first time coming across a docID, set the score in a separate counterset to that docID's count
+&nbsp;&nbsp;12. If not first time coming across a docID, increment the docID's score to be the sum of it's current score and the count corresponding to the docID's count for the word under investigation
+&nbsp;&nbsp;13. Once all words in the query have been investigated, determine the size of the counterset containing docID score pairs 
+&nbsp;&nbsp;14. Insert into an array of result_t structs 
+&nbsp;&nbsp;15. Sort the array into descending order by score
+&nbsp;&nbsp;16. Print according to format in the specs
 
 ### Limits
 
