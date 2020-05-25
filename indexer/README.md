@@ -1,5 +1,5 @@
 # Sydney Friedland
-## CS50 Spring 2020, Lab 4, `indexer`
+## CS50 Spring 2020, Lab 5, `indexer`
 Sourced info from CS50 TSE Indexer [Requirements Spec](https://www.cs.dartmouth.edu/~cs50/Labs/Lab5/REQUIREMENTS.html)
 
 ### indexer
