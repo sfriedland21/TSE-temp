@@ -35,15 +35,15 @@
 2. Create the index (initialize an empty hashtable)
 3. Build the index
 4. For each document in the crawler directory:
-    5. Read the URL, depth, and HTML to create a new webpage struct
-    6. For each word in the webpage:
-        7. If it has three or more letters, normalize
-        8. Check if that word has already been found
-            9. If it is the first time coming across the word, add it to the hashtable with the corresponding docID and count = 1
-            10. If the word already exists in the hashtable for that docID, increment its count
+5. Read the URL, depth, and HTML to create a new webpage struct
+6. For each word in the webpage:
+7. If it has three or more letters, normalize
+8. Check if that word has already been found
+9. If it is the first time coming across the word, add it to the hashtable with the corresponding docID and count = 1
+10. If the word already exists in the hashtable for that docID, increment its count
 11. Save the index
 12. For each word in the hashtable:
-    13. Obtain each of its [docID count] pair and write to the them to `indexFilename`, one word per line, with the word at the beginning of the line followed by each of its [docID count] pairs
+13. Obtain each of its [docID count] pair and write to the them to `indexFilename`, one word per line, with the word at the beginning of the line followed by each of its [docID count] pairs
 
 #### indextest
 

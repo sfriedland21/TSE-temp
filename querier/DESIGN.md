@@ -62,16 +62,16 @@ The querier will run as follows:
 3. Build the index
 4. Request a query then repeat the following until EOF
 5. For each query
-    6. Normalize the query (convert to lowercase) and extract individual words
-    7. Check for syntax errors, if no errors
-    8. For each word in the query
-        9. If the word exists in the index, create a new counterset to hold the docIDs corresponding to the documents in which the word appears 
-        10. If the first time coming across a docID, set the score in a separate counterset to that docID's count
-        12. If not first time coming across a docID, increment the docID's score to be the sum of it's current score and the count corresponding to the docID's count for the word under investigation
-        13. Once all words in the query have been investigated, determine the size of the counterset containing docID score pairs 
-        14. Insert into an array of result_t structs 
-        15. Sort the array into descending order by score
-        16. Print according to format in the specs
+ 6. Normalize the query (convert to lowercase) and extract individual words
+ 7. Check for syntax errors, if no errors
+ 8. For each word in the query
+  9. If the word exists in the index, create a new counterset to hold the docIDs corresponding to the documents in which the word appears 
+  10. If the first time coming across a docID, set the score in a separate counterset to that docID's count
+  12. If not first time coming across a docID, increment the docID's score to be the sum of it's current score and the count corresponding to the docID's count for the word under investigation
+  13. Once all words in the query have been investigated, determine the size of the counterset containing docID score pairs 
+  14. Insert into an array of result_t structs 
+  15. Sort the array into descending order by score
+  16. Print according to format in the specs
 
 ### Dataflow through modules
 
