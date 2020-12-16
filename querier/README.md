@@ -19,14 +19,14 @@ The querier **shall**:
   * where `indexFilename` is the pathname of a file produced by the Indexer.
 2. load the index from `indexFilename` into an internal data structure.
 3. read search queries from stdin, one per line, until EOF.
-	4. clean and parse each query according to the *syntax* described below.
-	5. if the query syntax is somehow invalid, print an error message, do not perform the query, and prompt for the next query.
-	5. print the 'clean' query for user to see.
-	5. use the index to identify the set of documents that *satisfy* the query, as described below.
-	6. if the query is empty (no words), print nothing.
-	6. if no documents satisfy the query, print `No documents match.`
-	7. otherwise, rank the resulting set of documents according to its *score*, as described below, and print the set of documents in decreasing rank order; for each, list the score, document ID and URL.
-	8. Exit with zero status when EOF is reached on stdin.
+4. clean and parse each query according to the *syntax* described below.
+5. if the query syntax is somehow invalid, print an error message, do not perform the query, and prompt for the next query.
+5. print the 'clean' query for user to see.
+5. use the index to identify the set of documents that *satisfy* the query, as described below.
+6. if the query is empty (no words), print nothing.
+6. if no documents satisfy the query, print `No documents match.`
+7. otherwise, rank the resulting set of documents according to its *score*, as described below, and print the set of documents in decreasing rank order; for each, list the score, document ID and URL.
+8. Exit with zero status when EOF is reached on stdin.
 
 ### Usage
 
