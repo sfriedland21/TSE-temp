@@ -1,6 +1,5 @@
 # Sydney Friedland
 ## CS50 Spring 2020, Lab 5, `indexer`
-Sourced info from CS50 TSE Indexer [Requirements Spec](https://www.cs.dartmouth.edu/~cs50/Labs/Lab5/REQUIREMENTS.html)
 
 ### indexer
 
@@ -25,7 +24,7 @@ The indexer **shall**:
 Ignore words with fewer than three characters, and "normalize" the word before indexing. Here, "normalize" means to convert all letters to lower-case.
 4. create a file `indexFilename` and write the index to that file, in the format described below.
 
-See [IMPLEMENTATION](../blob/master/indexer/IMPLEMENTATION.md) for details regarding `indextest`.
+See [IMPLEMENTATION](IMPLEMENTATION.md) for details regarding `indextest`.
 
 ### Usage
 
@@ -53,6 +52,6 @@ To test, simply `make test` or `make test &> testing.out`.
 
 To clean up directory, simply `make clean`.
 
-Details of test run in [TESTING](../blob/master/indexer/TESTING.md).
+Details of test run in [TESTING](TESTING.md).
 
-Details of implementation choices in [IMPLEMENTATION](../blob/master/indexer/IMPLEMENTATION.md).
+Details of implementation choices in [IMPLEMENTATION](IMPLEMENTATION.md).

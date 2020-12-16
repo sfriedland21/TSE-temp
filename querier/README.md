@@ -1,6 +1,5 @@
 # Sydney Friedland
 ## CS50 Spring 2020, Lab 6, `querier`
-Sourced info from CS50 TSE Querier [Requirements Spec](https://www.cs.dartmouth.edu/~cs50/Labs/Lab6/REQUIREMENTS.html)
 
 ### querier
 
@@ -49,7 +48,7 @@ The querier will then request queries from the user via stdin until EOF.
 
 * `pageDirectory` has files named 1, 2, 3, ..., without gaps.
 * The content of files in `pageDirectory` follow the format as defined in the specs for *crawler*.
-* The content of the file named by `indexFilename` follows the [Index file format]({{site.labs}}/Lab5/REQUIREMENTS.html#index-file-format).
+* The content of the file named by `indexFilename` follows the *Index file format* in requirements.
 * Queries consist of words no longer than 50 characters.
 * There are no more than 500 documents in the crawler directory.
 
@@ -57,6 +56,6 @@ The querier will then request queries from the user via stdin until EOF.
 
 To compile `querier`, simply `make`.
 
-To test, simply `make test` or `make test &> testing.out` after completing set-up detailed in [TESTING](../blob/master/querier/TESTING.md).
+To test, simply `make test` or `make test &> testing.out` after completing set-up detailed in [TESTING](TESTING.md).
 
 To clean up directory, simply `make clean`.

@@ -1,6 +1,5 @@
 # Sydney Friedland
 ## CS50 Spring 2020, Lab 4, `crawler`
-Sourced info from CS50 TSE Crawler [Requirements Spec](https://www.cs.dartmouth.edu/~cs50/Labs/Lab4/REQUIREMENTS.html) and CS50 TSE Crawler [Design Spec](https://www.cs.dartmouth.edu/~cs50/Labs/Lab4/DESIGN.html)
 
 ### crawler
 
@@ -57,6 +56,6 @@ To test, simply `make test` or `make test &> testing.out`.
 
 To clean up directory, simply `make clean`.
 
-Details of test run in [TESTING](../blob/master/crawler/TESTING.md).
+Details of test run in [TESTING](TESTING.md).
 
-Details of implementation choices in [IMPLEMENTATION](../blob/master/crawler/IMPLEMENTATION.md).
+Details of implementation choices in [IMPLEMENTATION](IMPLEMENTATION.md).
